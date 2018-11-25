@@ -20,8 +20,12 @@ public class Leilao {
 			total = quantidadeLancePorUsuario(lance, total, lanc);
 
 		}
-		if (lances.isEmpty() || !lances.get(lances.size() - 1).getUsuario().equals(lance.getUsuario()) && total < 5)
+		if (lances.isEmpty() || !ultimoLance().getUsuario().equals(lance.getUsuario()) && total < 5)
 			lances.add(lance);
+	}
+
+	private Lance ultimoLance() {
+		return lances.get(lances.size() - 1);
 	}
 
 	private Integer quantidadeLancePorUsuario(Lance lance, Integer total, Lance lanc) {
