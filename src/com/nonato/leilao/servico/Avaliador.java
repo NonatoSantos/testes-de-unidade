@@ -12,7 +12,7 @@ public class Avaliador {
 		for (Lance lance : leilao.getLances()) {
 			if (lance.getValor() > maiorLance)
 				maiorLance = lance.getValor();
-			else if (lance.getValor() < menorLance)
+			if (lance.getValor() < menorLance)
 				menorLance = lance.getValor();
 		}
 
@@ -25,6 +25,5 @@ public class Avaliador {
 	public double getMenorLance() {
 		return menorLance;
 	}
-	
 
 }
